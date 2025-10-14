@@ -21,7 +21,7 @@ export default defineConfig({
   },
   server: {
     allowedHosts: [
-      '97e2c25325d3.ngrok-free.app' // 👈 Add your ngrok domain here
+      'crefy.xyz' // 👈 Add your ngrok domain here
     ]
   }
 
