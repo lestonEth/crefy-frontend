@@ -1,0 +1,103 @@
+import { Button } from '../../ui/button'
+
+function HeaderSection() {
+  const navigationItems = [
+    { label: 'Whitepaper', href: '/whitepaper' },
+    { label: 'ChangeLogs', href: '/changelogs' },
+    { label: 'Docs', href: '/docs' }
+  ]
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-gradient-to-br from-gray-50 to-gray-100 ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo Section */}
+          <div className="flex flex-1 items-center">
+            <a 
+              href="/" 
+              className="flex items-center space-x-3 transition-all duration-300 hover:scale-105"
+            >
+              <div className="relative">
+                <div className="h-10 w-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-sm">Cf</span>
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+              </div>
+              <span className="text-2xl font-black text-gray-900 hidden sm:block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                Crefy_
+              </span>
+            </a>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="hidden md:flex flex-1 justify-center">
+            <div className="flex items-center space-x-1 bg-gray-50/80 rounded-2xl p-1.5 backdrop-blur-sm">
+              {navigationItems.map((item) => (
+                <Button
+                  key={item.label}
+                  variant="ghost"
+                  asChild
+                  className="text-gray-600 hover:text-purple-600 hover:bg-white px-4 py-2 rounded-xl transition-all duration-200 font-medium text-sm hover:shadow-sm"
+                >
+                  <a href={item.href}>
+                    {item.label}
+                  </a>
+                </Button>
+              ))}
+            </div>
+          </nav>
+
+          {/* CTA Section */}
+          <div className="flex flex-1 justify-end items-center gap-3">
+            <Button 
+              variant="ghost" 
+              className="text-gray-600 hover:text-purple-600 hover:bg-transparent px-4 py-2 transition-all duration-200 font-medium text-sm hidden sm:flex"
+              size="default"
+            >
+              Book a Demo
+            </Button>
+            <Button 
+              variant="default" 
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 px-6 py-2.5 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 font-medium text-sm rounded-xl"
+              size="default"
+            >
+              Get Started
+            </Button>
+            
+            {/* Mobile menu button */}
+            <button className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+              <div className="w-6 h-6 flex flex-col justify-center space-y-1">
+                <div className="w-full h-0.5 bg-gray-600 rounded"></div>
+                <div className="w-full h-0.5 bg-gray-600 rounded"></div>
+                <div className="w-full h-0.5 bg-gray-600 rounded"></div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden border-t border-gray-100 mt-2 pt-4 pb-2">
+          <div className="flex flex-col space-y-2">
+            {navigationItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-gray-600 hover:text-purple-600 hover:bg-gray-50 px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm"
+              >
+                {item.label}
+              </a>
+            ))}
+            <Button 
+              variant="ghost" 
+              className="text-gray-600 hover:text-purple-600 hover:bg-gray-50 px-4 py-2 transition-all duration-200 font-medium text-sm justify-start mt-2"
+            >
+              Book a Demo
+            </Button>
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+export default HeaderSection
