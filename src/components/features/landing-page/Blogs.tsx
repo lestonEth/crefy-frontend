@@ -1,8 +1,37 @@
 import { useState } from 'react';
-import { ArrowUpRight, Zap } from 'lucide-react';
+import { ArrowUpRight, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
 function BlogSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const faqItems = [
+    {
+      question: "What is Web3 and how does it differ from Web2?",
+      answer: "Web3 represents the next evolution of the internet, built on decentralized technologies like blockchain. Unlike Web2 where data is controlled by central corporations, Web3 gives users ownership of their data and digital assets through decentralized networks and protocols."
+    },
+    {
+      question: "How do blockchain networks ensure security?",
+      answer: "Blockchain networks use cryptographic principles, consensus mechanisms (like Proof of Work or Proof of Stake), and decentralized validation to ensure security. Each transaction is verified by multiple nodes, making it extremely difficult to alter historical data without network consensus."
+    },
+    {
+      question: "What are smart contracts and how do they work?",
+      answer: "Smart contracts are self-executing contracts with terms directly written into code. They automatically execute when predetermined conditions are met, running on blockchain networks without need for intermediaries, enabling trustless transactions and automated processes."
+    },
+    {
+      question: "How can I get started with Web3 development?",
+      answer: "Start by learning blockchain fundamentals, then move to smart contract development with Solidity for Ethereum or other blockchain-specific languages. Familiarize yourself with Web3 libraries, development frameworks like Hardhat or Truffle, and test your contracts on testnets before deployment."
+    },
+    {
+      question: "What is decentralized storage and why is it important?",
+      answer: "Decentralized storage systems like IPFS, Arweave, and Filecoin distribute data across multiple nodes instead of central servers. This enhances data resilience, prevents censorship, reduces single points of failure, and gives users control over their data."
+    }
+  ];
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
       <div className="relative max-w-[1600px] mx-auto px-6 py-20 lg:py-32">
@@ -35,57 +64,50 @@ function BlogSection() {
           </div>
         </div>
 
-        {/* Featured Post - Bold & Dynamic */}
-        {/* <div 
-          className="mb-32 group cursor-pointer"
-          onMouseEnter={() => setHoveredCard(0)}
-          onMouseLeave={() => setHoveredCard(null)}
-        >
-          <div className="relative bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div className="relative grid lg:grid-cols-2 gap-12 p-12 lg:p-16 text-white">
-              <div className="space-y-8">
-                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-4 py-2">
-                  <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                  <span className="text-sm font-bold">FEATURED</span>
-                </div>
-                
-                <h2 className="text-5xl lg:text-6xl font-black leading-tight">
-                  Building the Next Generation of Web3
-                </h2>
-                
-                <p className="text-xl text-white/90 leading-relaxed">
-                  Comprehensive tools empowering developers to create secure, scalable decentralized applications.
-                </p>
-                
-                <div className="flex items-center gap-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center font-black text-lg">
-                      CT
+        {/* Frequently Asked Questions Section */}
+        <div className="py-20 border-t border-gray-200">
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-4">
+              {faqItems.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-purple-300"
+                >
+                  <button
+                    className="w-full px-6 py-6 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
+                    onClick={() => toggleFaq(index)}
+                  >
+                    <span className="text-lg font-semibold text-gray-900 pr-4">
+                      {faq.question}
+                    </span>
+                    {openFaq === index ? (
+                      <ChevronUp className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    )}
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
                     </div>
-                    <div>
-                      <div className="font-bold">Crefy Team</div>
-                      <div className="text-sm text-white/70">Dec 18, 2024</div>
-                    </div>
-                  </div>
+                  )}
                 </div>
-                
-                <button className={`inline-flex items-center gap-3 bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all ${hoveredCard === 0 ? 'gap-5 scale-105' : ''}`}>
-                  Read Article
-                  <ArrowUpRight className="w-6 h-6" />
-                </button>
-              </div>
-              
-              <div className="relative flex items-center justify-center">
-                <div className="absolute inset-0 bg-white/10 rounded-2xl blur-3xl"></div>
-                <div className={`relative text-[200px] transition-transform duration-700 ${hoveredCard === 0 ? 'scale-110 rotate-12' : ''}`}>
-                  🚀
-                </div>
-              </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-gray-600 mb-6">
+                Still have questions?
+              </p>
+              <button className="group inline-flex items-center gap-3 bg-purple-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-purple-700 transition-colors">
+                Contact Support
+                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </button>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
