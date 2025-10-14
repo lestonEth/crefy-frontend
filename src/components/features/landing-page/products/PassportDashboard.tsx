@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import './PassportDashboard.css'
 
 function PassportDashboard() {
   const [isFlipped, setIsFlipped] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
   const [isPageTurning, setIsPageTurning] = useState(false)
-  const [pageTurnDirection, setPageTurnDirection] = useState('next')
+//   const [pageTurnDirection, setPageTurnDirection] = useState('next')
 
   useEffect(() => {
     const flipTimer = setTimeout(() => {
@@ -20,7 +21,7 @@ function PassportDashboard() {
     if (isPageTurning) return
     
     setIsPageTurning(true)
-    setPageTurnDirection('next')
+    // setPageTurnDirection('next')
     
     setTimeout(() => {
       setCurrentPage((prev) => (prev + 1) % 3)
@@ -154,38 +155,6 @@ function PassportDashboard() {
           </div>
         </div>
       </div>
-
-      {/* Custom CSS for 3D animations */}
-      <style jsx>{`
-        .rotate-y-0 {
-          transform: rotateY(0deg);
-        }
-        .rotate-y-25 {
-          transform: rotateY(25deg);
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        .rotate-y-[-160deg] {
-          transform: rotateY(-160deg);
-        }
-        .transform-origin-left {
-          transform-origin: left center;
-        }
-        .transform-style-3d {
-          transform-style: preserve-3d;
-        }
-        
-        /* Smooth transitions */
-        .transition-transform {
-          transition-property: transform;
-        }
-        
-        /* Ensure 3D rendering */
-        * {
-          transform-style: preserve-3d;
-        }
-      `}</style>
     </div>
   )
 }

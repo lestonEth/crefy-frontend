@@ -1,0 +1,32 @@
+.passport-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .rotate-y-0 {
+    transform: rotateY(0deg);
+  }
+  
+  .rotate-y-25 {
+    transform: rotateY(25deg);
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  .rotate-y--160 {
+    transform: rotateY(-160deg);
+  }
+  
+  .transform-origin-left {
+    transform-origin: left center;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  /* Smooth transitions */
+  .transition-transform {
+    transition-property: transform;
+  }

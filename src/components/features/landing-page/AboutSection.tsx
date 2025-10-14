@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../../ui/button";
 import AboutImage from "@/assets/about-image.png";
 import ClapHands from "@/assets/clap-hand.png";

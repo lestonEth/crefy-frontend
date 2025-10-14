@@ -1,10 +1,5 @@
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/autoplay';
 
 const partners = [
   { id: 1, name: 'Microsoft', logo: 'https://altcoinsbox.com/wp-content/uploads/2023/02/full-base-logo.jpg' },

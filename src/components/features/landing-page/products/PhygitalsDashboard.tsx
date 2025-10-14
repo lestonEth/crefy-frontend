@@ -1,4 +1,3 @@
-import React from 'react'
 import tokenizedCoffee from '@/assets/tokenized-coffee.png'
 
 function PhygitalsDashboard() {

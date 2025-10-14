@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Play, Calendar, ArrowRight } from 'lucide-react';
 
 function HeroSection() {

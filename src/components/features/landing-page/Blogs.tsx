@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ArrowUpRight, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
 function BlogSection() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const faqItems = [

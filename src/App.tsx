@@ -4,7 +4,6 @@ import HeroSection from "./components/features/landing-page/hero-section"
 import PartnershipSection from "./components/features/landing-page/partnership-section"
 import ProductSection from "./components/features/landing-page/ProductsSection"
 import AboutSection from "./components/features/landing-page/AboutSection"
-import TeamSection from "./components/features/landing-page/teamSection"
 import Footer from "./components/features/landing-page/FooterSection"
 import Blogs from "./components/features/landing-page/Blogs"
 

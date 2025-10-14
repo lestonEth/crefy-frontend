@@ -1,4 +1,3 @@
-import React from 'react'
 import ConnectDashboard from './ConnectDashboard'
 import IDDashboard from './IDDashboard'
 import PassportDashboard from './PassportDashboard'
