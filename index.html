@@ -4,17 +4,150 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>crefy</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Crefy - Complete Web3 Infrastructure for Your dApps</title>
+    <meta name="title" content="Crefy - Complete Web3 Infrastructure for Your dApps">
+    <meta name="description" content="Build next-generation decentralized applications with seamless wallet integration, secure identity verification, and real-world asset tokenization. Enterprise-grade Web3 infrastructure.">
+    <meta name="keywords" content="web3, blockchain, dapps, wallet integration, KYC verification, identity management, asset tokenization, multi-chain, gasless transactions, decentralized applications">
+    <meta name="author" content="Crefy">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crefy.xyz/">
+    <meta property="og:title" content="Crefy - Complete Web3 Infrastructure for Your dApps">
+    <meta property="og:description" content="Build next-generation dApps with seamless wallet integration, secure identity verification, and real-world asset tokenization. Powered by Buidlabs Infrastructure.">
+    <meta property="og:image" content="https://crefy.xyz/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://crefy.xyz/">
+    <meta property="twitter:title" content="Crefy - Complete Web3 Infrastructure for Your dApps">
+    <meta property="twitter:description" content="Build next-generation dApps with seamless wallet integration, secure identity verification, and real-world asset tokenization.">
+    <meta property="twitter:image" content="https://crefy.xyz/images/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://crefy.xyz/">
+    
+    <!-- Additional SEO Enhancements -->
+    <meta name="theme-color" content="#8B5CF6">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Crefy",
+      "url": "https://crefy.xyz",
+      "logo": "https://crefy.xyz/images/logo.png",
+      "description": "Complete Web3 infrastructure platform offering wallet integration, identity verification, and asset tokenization services for decentralized applications.",
+      "foundingDate": "2024",
+      "areaServed": "Worldwide",
+      "sameAs": [
+        "https://github.com/crefy",
+        "https://twitter.com/crefy",
+        "https://linkedin.com/company/crefy",
+        "https://discord.gg/crefy"
+      ],
+      "knowsAbout": [
+        "Web3 Infrastructure",
+        "Blockchain Technology",
+        "dApp Development",
+        "Wallet Integration",
+        "KYC/AML Verification",
+        "Asset Tokenization",
+        "Multi-chain Solutions",
+        "Gasless Transactions"
+      ]
+    }
+    </script>
+
+    <!-- Additional Schema for Web3 Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Crefy Connect",
+      "provider": {
+        "@type": "Organization",
+        "name": "Crefy"
+      },
+      "description": "Seamless multi-chain wallet integration with Account Abstraction, ENS support, and gasless transactions.",
+      "serviceType": "Web3 Wallet Infrastructure"
+    }
+    </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- Additional performance optimizations -->
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js">
 
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Performance tracking and Web3 readiness -->
+    <script>
+      // Performance monitoring with Web3 context
+      window.addEventListener('load', function() {
+        // Log performance metrics
+        if ('performance' in window) {
+          const perfData = window.performance.timing;
+          const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+          console.log('Crefy - Page load time:', loadTime + 'ms');
+          
+          // Track Web3 readiness
+          if (window.ethereum) {
+            console.log('Crefy - Web3 wallet detected');
+          } else {
+            console.log('Crefy - No Web3 wallet detected');
+          }
+        }
+      });
+
+      // Web3 provider detection for better UX
+      window.addEventListener('DOMContentLoaded', function() {
+        // Check for Ethereum provider
+        const hasWeb3 = typeof window.ethereum !== 'undefined';
+        document.documentElement.classList.add(hasWeb3 ? 'web3-ready' : 'web3-not-detected');
+      });
+
+      // Error tracking for better debugging
+      window.addEventListener('error', function(e) {
+        console.error('Crefy - Application error:', e.error);
+      });
+    </script>
+
+    <!-- Progressive Web App enhancements -->
+    <script>
+      // Register service worker for PWA capabilities
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('Crefy - ServiceWorker registration successful');
+          }, function(err) {
+            console.log('Crefy - ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
