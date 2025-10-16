@@ -1,5 +1,6 @@
 import { Button } from '../../ui/button'
 import { useState } from 'react'
+import logo from '../../../assets/crefy-icon.png'  // Crefy icon image
 
 function HeaderSection() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -23,11 +24,8 @@ function HeaderSection() {
               href="/" 
               className="flex items-center space-x-3 transition-all duration-300 hover:scale-105"
             >
-              <div className="relative">
-                <div className="h-10 w-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">Cf</span>
-                </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+              <div className="relative rounded-full overflow-hidden">
+                <img src={logo} alt="Crefy Logo" className="w-10 h-10" />
               </div>
               <span className="text-2xl font-black text-gray-900 hidden sm:block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                 Crefy_
