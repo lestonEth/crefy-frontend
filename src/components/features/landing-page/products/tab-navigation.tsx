@@ -14,7 +14,7 @@ interface TabNavigationProps {
 
 function TabNavigation({ tabs, activeTab, onTabChange }: TabNavigationProps) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="hidden lg:flex flex-col gap-4">
       {tabs.map((tab) => {
         const Icon = tab.icon
         return (
